@@ -519,4 +519,59 @@ body.dark-mode::before {
 .dark-mode .project-tag {
     background: rgba(255, 255, 255, 0.05);
     color: #888;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+}
+
+.nav-tab {
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(0, 176, 155, 0.1);
+    color: #00b09b;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dark-mode .nav-tab {
+    background: rgba(26, 42, 108, 0.15);
+    color: #4a9eff;
+}
+
+.nav-tab.active {
+    background: #00b09b;
+    color: white;
+}
+
+.dark-mode .nav-tab.active {
+    background: #4a9eff;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 } 

@@ -6,6 +6,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const achievements = document.querySelectorAll('.achievement');
     const dayProgressBar = document.querySelector('.day-progress-bar');
 
+    // Sistema de Tabs
+    const tabs = document.querySelectorAll('.nav-tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active de todas as tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            // Adiciona active na tab clicada
+            tab.classList.add('active');
+            const targetContent = document.querySelector(tab.dataset.target);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+
     // Sistema de Tema
     function setTheme(theme) {
         if (theme === 'dark') {

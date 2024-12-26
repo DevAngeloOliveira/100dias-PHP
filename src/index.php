@@ -73,27 +73,49 @@
 
         <div class="projects-section">
             <h2>Projetos Desenvolvidos</h2>
-            <div class="project-card">
-                <a href="projetos/Projeto_Dia1_Variaveis_Tipos_Dados/index.php" style="text-decoration: none; color: inherit;">
+
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-target="#projetos">📂 Projetos</button>
+                <button class="nav-tab" data-target="#exercicios">✏️ Exercícios</button>
+            </div>
+
+            <div id="projetos" class="tab-content active">
+                <div class="project-card">
                     <div class="project-title">
-                        <span class="project-icon">📚</span>
-                        Dia 1 - Variáveis e Tipos de Dados
+                        <span class="project-icon">🚧</span>
+                        Em breve
                     </div>
                     <div class="project-description">
-                        Primeiro projeto da jornada PHP, focado em aprender os conceitos fundamentais
-                        de variáveis e tipos de dados na linguagem PHP.
+                        Os projetos práticos começarão em breve, conforme avançamos no curso.
                     </div>
-                    <div class="project-meta">
-                        <span class="project-status">
-                            <span>✅</span>
-                            Concluído
-                        </span>
-                        <span class="project-date">26/12/2023</span>
-                        <div style="flex: 1"></div>
-                        <span class="project-tag">PHP</span>
-                        <span class="project-tag">Fundamentos</span>
-                    </div>
-                </a>
+                </div>
+            </div>
+
+            <div id="exercicios" class="tab-content">
+                <div class="project-card">
+                    <a href="exercicios/exercicio_dia1.php" style="text-decoration: none; color: inherit;">
+                        <div class="project-title">
+                            <span class="project-icon">✏️</span>
+                            Dia 1: Sistema de Cadastro de Alunos
+                        </div>
+                        <div class="project-description">
+                            Primeiro exercício da jornada PHP, focado em variáveis e tipos de dados.
+                            Sistema completo de gerenciamento de informações de alunos com validações
+                            e formatação de dados.
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-status">
+                                <span>✅</span>
+                                Concluído
+                            </span>
+                            <span class="project-date">26/12/2023</span>
+                            <div style="flex: 1"></div>
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">Arrays</span>
+                            <span class="project-tag">Validações</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
