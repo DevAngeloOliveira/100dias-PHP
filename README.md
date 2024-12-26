@@ -1,6 +1,21 @@
 # 100 Dias de PHP
 Durante 100 dias irei estudar PHP
 
+## Progresso Atual
+
+### Dia 1 (26/12/2024) - Hello World e Frontend Integration
+- Criação da estrutura base do projeto
+- Desenvolvimento de um perfil interativo com PHP, HTML, CSS e JavaScript
+- Implementação de sistema de conquistas e progresso
+- Features implementadas:
+  - Tema claro/escuro com persistência
+  - Animações e transições suaves
+  - Sistema de conquistas desbloqueáveis
+  - Barra de progresso do desafio
+  - Tooltips informativos
+  - Avatar interativo
+  - Design responsivo
+
 ## Como Iniciar o Servidor
 
 Para iniciar o servidor de desenvolvimento PHP, abra o terminal na pasta do projeto e execute:
