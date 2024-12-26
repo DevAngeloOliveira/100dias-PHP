@@ -18,18 +18,17 @@
             <p class="profile-info">
                 Jornada de 100 dias aprendendo PHP: Do básico ao avançado
                 <br>
-                <small style="opacity: 0.7;">Objetivo: Dominar PHP e suas tecnologias para desenvolvimento web profissional</small>
+                <small style="opacity: 0.7;">Objetivo: Aprimorar meu conhecimento em PHP</small>
             </p>
         </div>
 
         <div class="tech-tags">
-            <span class="tech-tag">⚡ PHP</span>
-            <span class="tech-tag">🗃️ MySQL</span>
-            <span class="tech-tag">🎨 HTML</span>
-            <span class="tech-tag">🎯 CSS</span>
-            <span class="tech-tag">⚙️ JavaScript</span>
-            <span class="tech-tag">📦 Git</span>
-
+            <span class="tech-tag" data-tech="php">⚡ PHP</span>
+            <span class="tech-tag" data-tech="mysql">🗃️ MySQL</span>
+            <span class="tech-tag" data-tech="html">🎨 HTML</span>
+            <span class="tech-tag" data-tech="css">🎯 CSS</span>
+            <span class="tech-tag" data-tech="javascript">⚙️ JavaScript</span>
+            <span class="tech-tag" data-tech="git">📦 Git</span>
         </div>
 
         <div class="progress-section">
@@ -50,33 +49,52 @@
         <div class="achievements">
             <h2>Conquistas Desbloqueadas</h2>
             <div class="achievement show">
-                🏆 Dia 1: Variáveis e Tipos de Dados
-                <small>26/12/2023</small>
+                <div class="achievement-content">
+                    <i>🏆</i>
+                    <span>Dia 1: Variáveis e Tipos de Dados</span>
+                </div>
+                <small class="achievement-date">26/12/2023</small>
             </div>
             <div class="achievement locked">
-                🔒 Dia 2: Estruturas de Controle
-                <small>Em breve</small>
+                <div class="achievement-content">
+                    <i>🔒</i>
+                    <span>Dia 2: Estruturas de Controle</span>
+                </div>
+                <small class="achievement-date">Em breve</small>
             </div>
             <div class="achievement locked">
-                🔒 Dia 3: Arrays e Loops
-                <small>Em breve</small>
+                <div class="achievement-content">
+                    <i>🔒</i>
+                    <span>Dia 3: Arrays e Loops</span>
+                </div>
+                <small class="achievement-date">Em breve</small>
             </div>
         </div>
 
         <div class="projects-section">
             <h2>Projetos Desenvolvidos</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li>
-                    <a href="projetos/Projeto_Dia1_Variaveis_Tipos_Dados/index.php" style="color: inherit; text-decoration: none;">
-                        📚 Dia 1 - Variáveis e Tipos de Dados
-                        <small style="display: block; opacity: 0.7;">
-                            ✅ Concluído em 26/12/2023
-                            <br>
-                            🎯 Primeiro projeto da jornada PHP
-                        </small>
-                    </a>
-                </li>
-            </ul>
+            <div class="project-card">
+                <a href="projetos/Projeto_Dia1_Variaveis_Tipos_Dados/index.php" style="text-decoration: none; color: inherit;">
+                    <div class="project-title">
+                        <span class="project-icon">📚</span>
+                        Dia 1 - Variáveis e Tipos de Dados
+                    </div>
+                    <div class="project-description">
+                        Primeiro projeto da jornada PHP, focado em aprender os conceitos fundamentais
+                        de variáveis e tipos de dados na linguagem PHP.
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-status">
+                            <span>✅</span>
+                            Concluído
+                        </span>
+                        <span class="project-date">26/12/2023</span>
+                        <div style="flex: 1"></div>
+                        <span class="project-tag">PHP</span>
+                        <span class="project-tag">Fundamentos</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
