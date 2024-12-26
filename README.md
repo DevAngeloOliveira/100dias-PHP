@@ -1,107 +1,147 @@
-# 100 Dias de PHP
-Durante 100 dias irei estudar PHP
+# 100 Dias de PHP 🚀
 
-## Progresso Atual
+![Status](https://img.shields.io/badge/Status-Em%20Progresso-brightgreen)
+![Dias](https://img.shields.io/badge/Dias%20Completados-1%2F100-blue)
+![PHP Version](https://img.shields.io/badge/PHP-%3E%3D8.0-777BB4)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-### Dia 1 (26/12/2024) - Hello World e Frontend Integration
-- Criação da estrutura base do projeto
-- Desenvolvimento de um perfil interativo com PHP, HTML, CSS e JavaScript
-- Implementação de sistema de conquistas e progresso
-- Features implementadas:
-  - Tema claro/escuro com persistência
-  - Animações e transições suaves
-  - Sistema de conquistas desbloqueáveis
-  - Barra de progresso do desafio
-  - Tooltips informativos
-  - Avatar interativo
-  - Design responsivo
+## 📋 Sobre o Projeto
 
-## Como Iniciar o Servidor
+Uma jornada intensiva de 100 dias focada em aprender e aprimorar habilidades em PHP e desenvolvimento web, do básico ao avançado. Este projeto documenta minha evolução diária, projetos práticos e conquistas ao longo do caminho.
 
-Para iniciar o servidor de desenvolvimento PHP, abra o terminal na pasta do projeto e execute:
+### 🎯 Objetivos
 
+- Dominar os fundamentos do PHP
+- Desenvolver projetos práticos e aplicações reais
+- Aprender boas práticas de programação
+- Explorar frameworks e ferramentas modernas
+- Construir um portfólio sólido de projetos
+
+## 🛠️ Tecnologias Utilizadas
+
+- **PHP** - Linguagem principal
+- **MySQL** - Banco de dados
+- **HTML/CSS** - Frontend
+- **JavaScript** - Interatividade
+- **Git** - Controle de versão
+- **Laravel** - Framework (em breve)
+
+## 📂 Estrutura do Projeto
+
+```
+100dias-PHP/
+├── src/
+│   ├── assets/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── images/
+│   ├── projetos/
+│   │   └── Projeto_Dia1_Variaveis_Tipos_Dados/
+│   └── index.php
+└── README.md
+```
+
+## 📊 Progresso
+
+### ✅ Dia 1: Variáveis e Tipos de Dados
+- Conceitos fundamentais de variáveis
+- Tipos de dados em PHP
+- Projeto prático implementado
+- Data de conclusão: 26/12/2023
+
+### 🔒 Próximos Passos
+- Dia 2: Estruturas de Controle
+- Dia 3: Arrays e Loops
+- E muito mais por vir!
+
+## 🎨 Features do Dashboard
+
+- **Design Responsivo**: Interface moderna e adaptável
+- **Modo Escuro**: Alternância automática de tema
+- **Progresso Visual**: Barras de progresso e conquistas
+- **Organização**: Projetos e conquistas bem estruturados
+- **Animações**: Transições e efeitos suaves
+- **Persistência**: Salvamento automático de preferências
+
+## 🚀 Como Executar
+
+1. Clone o repositório:
 ```bash
-# Na pasta raiz do projeto
-php -S localhost:8000 -t src/
-
-# Ou para um diretório específico (exemplo: fundamentos)
-php -S localhost:8000 -t src/fundamentos/
+git clone https://github.com/seu-usuario/100dias-PHP.git
 ```
 
-Após iniciar o servidor:
-1. Abra seu navegador
-2. Acesse: http://localhost:8000
-3. Para acessar um arquivo específico: http://localhost:8000/nome_do_arquivo.php
-
-## Estrutura do Projeto
-
-```
-src/
-├── fundamentos/     # Conceitos básicos de PHP
-├── intermediario/   # Tópicos intermediários
-├── avancado/       # Tópicos avançados
-├── projetos/       # Projetos práticos
-├── exercicios/     # Exercícios diários
-└── recursos/       # Materiais complementares
+2. Entre no diretório:
+```bash
+cd 100dias-PHP
 ```
 
-### Organização do Estudo
+3. Inicie o servidor PHP:
+```bash
+cd src
+php -S localhost:8000
+```
+
+4. Acesse no navegador:
+```
+http://localhost:8000
+```
+
+## 💡 Funcionalidades Implementadas
+
+### Dashboard
+- [x] Sistema de temas (Claro/Escuro)
+- [x] Barra de progresso animada
+- [x] Sistema de conquistas
+- [x] Listagem de projetos
+- [x] Tags de tecnologias
+- [x] Perfil personalizado
+
+### Projetos
+- [x] Dia 1: Sistema de variáveis e tipos de dados
+- [ ] Dia 2: Em desenvolvimento
+- [ ] Dia 3: Planejado
+
+## 📈 Plano de Estudos
 
 1. **Fundamentos (Dias 1-30)**
-   - Sintaxe básica
-   - Variáveis e tipos de dados
-   - Operadores
+   - Variáveis e tipos
    - Estruturas de controle
-   - Arrays e loops
-   - Funções
-   - Manipulação de strings
-   - Formulários e POST/GET
+   - Arrays e funções
+   - POO básica
 
 2. **Intermediário (Dias 31-60)**
-   - POO (Programação Orientada a Objetos)
-   - Namespaces
-   - Composer e autoload
-   - Manipulação de arquivos
-   - Banco de dados (MySQL)
-   - Sessões e cookies
+   - Banco de dados
    - APIs REST
-   - Tratamento de erros
-
-3. **Avançado (Dias 61-90)**
+   - Segurança
    - Design Patterns
+
+3. **Avançado (Dias 61-100)**
    - Framework Laravel
-   - Testes unitários (PHPUnit)
-   - Segurança e boas práticas
-   - Cache e otimização
-   - Websockets
-   - Docker
-   - CI/CD
+   - Testes automatizados
+   - Deploy e CI/CD
+   - Projetos completos
 
-4. **Projetos Práticos (Dias 91-100)**
-   - Desenvolvimento de aplicações completas
-   - Integração com APIs
-   - Deployment
+## 🤝 Contribuição
 
-### Como Usar
+Sinta-se à vontade para contribuir com o projeto. Toda sugestão é bem-vinda!
 
-1. Cada dia de estudo deve ter seu próprio arquivo na pasta correspondente
-2. Nomear arquivos de forma descritiva (ex: `01_variaveis.php`)
-3. Comentar o código para referência futura
-4. Criar pequenos projetos práticos para fixar o conhecimento
+1. Faça um Fork do projeto
+2. Crie sua Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a Branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
-### Recursos Úteis
+## 📝 Licença
 
-- [PHP.net - Documentação Oficial](https://www.php.net/docs.php)
-- [PHP The Right Way](https://phptherightway.com/)
-- [Laravel Documentation](https://laravel.com/docs)
-- [PHP-FIG](https://www.php-fig.org/)
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-### Objetivos
+## 👤 Autor
 
-- Dominar a sintaxe e recursos do PHP
-- Desenvolver aplicações web robustas
-- Aprender boas práticas de programação
-- Criar um portfólio de projetos
-- Preparar-se para o mercado de trabalho
+**Ângelo Oliveira**
 
-_Lembre-se: Consistência é a chave para o aprendizado. Dedique pelo menos 1 hora por dia aos estudos._
+- LinkedIn: [@seu-linkedin](https://linkedin.com/in/seu-linkedin)
+- GitHub: [@seu-github](https://github.com/seu-github)
+
+---
+
+⭐️ From [Ângelo Oliveira](https://github.com/seu-usuario)
