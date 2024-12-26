@@ -1,6 +1,23 @@
 # 100 Dias de PHP
 Durante 100 dias irei estudar PHP
 
+## Como Iniciar o Servidor
+
+Para iniciar o servidor de desenvolvimento PHP, abra o terminal na pasta do projeto e execute:
+
+```bash
+# Na pasta raiz do projeto
+php -S localhost:8000 -t src/
+
+# Ou para um diretório específico (exemplo: fundamentos)
+php -S localhost:8000 -t src/fundamentos/
+```
+
+Após iniciar o servidor:
+1. Abra seu navegador
+2. Acesse: http://localhost:8000
+3. Para acessar um arquivo específico: http://localhost:8000/nome_do_arquivo.php
+
 ## Estrutura do Projeto
 
 ```
