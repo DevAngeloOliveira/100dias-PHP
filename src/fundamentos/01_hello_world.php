@@ -1,51 +1,49 @@
 <?php
 
-// Um array é uma estrutura de dados que armazena uma coleção de valores. 
-// Em um array indexado, cada valor é associado a um índice numérico, começando do 0.
-$array = [1, 2, 3, 4, 5];
+/**
+ * Fundamentos do PHP - Aula 1: Introdução e Hello World
+ * 
+ * Nesta aula, aprenderemos:
+ * 1. O que é PHP
+ * 2. Como escrever código PHP
+ * 3. Comentários
+ * 4. Saída de dados
+ */
 
-// Acessando e exibindo cada elemento do array usando seu índice numérico.
-echo "Índice 0: " . $array[0] . "<br>"; // Exibe o primeiro valor do array, que é 1.
-echo "Índice 1: " . $array[1] . "<br>"; // Exibe o segundo valor do array, que é 2.
-echo "Índice 2: " . $array[2] . "<br>"; // Exibe o terceiro valor do array, que é 3.
-echo "Índice 3: " . $array[3] . "<br>"; // Exibe o quarto valor do array, que é 4.
-echo "Índice 4: " . $array[4] . "<br>"; // Exibe o quinto valor do array, que é 5.
+// Este é um comentário de linha única
 
-// Um array associativo é uma estrutura de dados onde cada valor é associado a uma chave única.
-// As chaves são strings que permitem acessar os valores de forma mais intuitiva.
-$arrayAssociativo = [
-    "nome" => "Gabriel",
-    "idade" => 23,
-    "profissao" => "Programador",
-    "tecnologias" => ["PHP", "JavaScript", "HTML", "CSS"] // Este é um array dentro de um array associativo, representando uma lista de tecnologias.
-];
+/*
+Este é um comentário
+de múltiplas linhas
+*/
 
-// Acessando e exibindo valores do array associativo usando suas chaves.
-echo "Nome: " . $arrayAssociativo["nome"] . "<br>"; // Exibe o valor associado à chave "nome", que é "Gabriel".
-echo "Idade: " . $arrayAssociativo["idade"] . "<br>"; // Exibe o valor associado à chave "idade", que é 23.
-echo "Profissão: " . $arrayAssociativo["profissao"] . "<br>"; // Exibe o valor associado à chave "profissao", que é "Programador".
-echo "Tecnologias: " . join(", ", $arrayAssociativo["tecnologias"]) . "<br>"; // Exibe os valores do array associado à chave "tecnologias", separados por vírgulas.
+// 1. Echo - Exibe uma ou mais strings
+echo "Olá, Mundo!<br>";
 
-// Exemplos de operadores
-$a = 10;
-$b = 5;
+// 2. Print - Exibe uma string
+print "Bem-vindo ao PHP!<br>";
 
-// Operadores aritméticos
-echo "Soma: " . ($a + $b) . "<br>";
-echo "Subtração: " . ($a - $b) . "<br>";
-echo "Multiplicação: " . ($a * $b) . "<br>";
-echo "Divisão: " . ($a / $b) . "<br>";
-echo "Módulo: " . ($a % $b) . "<br>";
+// 3. Concatenação de strings com ponto (.)
+echo "PHP " . "é " . "incrível!<br>";
 
-// Operadores de comparação
-echo "Igual: " . ($a == $b ? 'true' : 'false') . "<br>";
-echo "Diferente: " . ($a != $b ? 'true' : 'false') . "<br>";
-echo "Maior que: " . ($a > $b ? 'true' : 'false') . "<br>";
-echo "Menor que: " . ($a < $b ? 'true' : 'false') . "<br>";
+// 4. Tags HTML podem ser incluídas
+echo "<h1>Título em H1</h1>";
+echo "<p>Este é um parágrafo em HTML.</p>";
 
-// Operadores lógicos
-$verdadeiro = true;
-$falso = false;
-echo "E lógico: " . ($verdadeiro && $falso ? 'true' : 'false') . "<br>";
-echo "Ou lógico: " . ($verdadeiro || $falso ? 'true' : 'false') . "<br>";
-echo "Negação: " . (!$verdadeiro ? 'true' : 'false') . "<br>";
+// 5. Informações sobre o PHP
+echo "<h2>Informações do PHP:</h2>";
+echo "Versão do PHP: " . PHP_VERSION . "<br>";
+echo "Sistema Operacional: " . PHP_OS . "<br>";
+
+// 6. phpinfo() - Mostra todas as informações do PHP (comentado por segurança)
+// phpinfo();
+
+// 7. Variável especial $_SERVER
+echo "<h2>Informações do Servidor:</h2>";
+echo "Nome do Servidor: " . $_SERVER['SERVER_NAME'] . "<br>";
+echo "Software do Servidor: " . $_SERVER['SERVER_SOFTWARE'] . "<br>";
+
+// 8. Data e Hora atual
+echo "<h2>Data e Hora:</h2>";
+echo "Data atual: " . date('d/m/Y') . "<br>";
+echo "Hora atual: " . date('H:i:s') . "<br>";
