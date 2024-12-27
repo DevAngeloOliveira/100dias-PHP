@@ -213,27 +213,32 @@ $nivel_atual = [
             font-weight: 700;
             margin: var(--spacing-sm) 0;
             background: var(--gradient-primary);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .stat-card.info .stat-number {
             background: var(--gradient-info);
+            background-clip: text;
             -webkit-background-clip: text;
         }
 
         .stat-card.success .stat-number {
             background: var(--gradient-success);
+            background-clip: text;
             -webkit-background-clip: text;
         }
 
         .stat-card.warning .stat-number {
             background: var(--gradient-warning);
+            background-clip: text;
             -webkit-background-clip: text;
         }
 
         .stat-card.primary .stat-number {
             background: var(--gradient-primary);
+            background-clip: text;
             -webkit-background-clip: text;
         }
 
