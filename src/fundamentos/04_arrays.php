@@ -1,134 +1,180 @@
 <?php
 
 /**
- * Fundamentos do PHP - Aula 4: Arrays
+ * Fundamentos do PHP - Arrays
  * 
- * Nesta aula, aprenderemos:
- * 1. Arrays indexados
- * 2. Arrays associativos
- * 3. Arrays multidimensionais
- * 4. Funções de array
- * 5. Iteração em arrays
+ * Arrays no PHP são estruturas de dados ordenadas que podem armazenar
+ * múltiplos valores de qualquer tipo em uma única variável.
+ * 
+ * Baseado na documentação oficial:
+ * @see https://www.php.net/manual/pt_BR/language.types.array.php
+ * @see https://www.php.net/manual/pt_BR/ref.array.php
  */
 
-// 1. Arrays Indexados
-echo "<h2>Arrays Indexados:</h2>";
-$frutas = ["Maçã", "Banana", "Laranja", "Uva"];
+// Função auxiliar para demonstração
+function demonstrarArray($titulo, $array, $explicacao = '')
+{
+    echo "<div style='margin: 10px 0; padding: 10px; border: 1px solid #ddd;'>";
+    echo "<h3>$titulo</h3>";
+    if ($explicacao) {
+        echo "<p><em>$explicacao</em></p>";
+    }
+    echo "<pre>";
+    var_dump($array);
+    echo "</pre></div>";
+}
 
-// Acessando elementos
-echo "Primeira fruta: " . $frutas[0] . "<br>";
-echo "Segunda fruta: " . $frutas[1] . "<br>";
+// 1. Sintaxe e Criação de Arrays
+echo "<h2>1. Sintaxe e Criação de Arrays</h2>";
+
+// Sintaxe curta (recomendada)
+$array1 = ['maçã', 'banana', 'laranja'];
+demonstrarArray(
+    "Array com sintaxe curta []",
+    $array1,
+    "A sintaxe curta foi introduzida no PHP 5.4 e é a forma moderna de criar arrays"
+);
+
+// Sintaxe com array()
+$array2 = array('maçã', 'banana', 'laranja');
+demonstrarArray(
+    "Array com função array()",
+    $array2,
+    "Sintaxe tradicional usando a construção array(). Ainda válida, mas menos comum em código moderno"
+);
+
+// 2. Tipos de Arrays
+echo "<h2>2. Tipos de Arrays</h2>";
+
+// Arrays Indexados Numericamente
+$frutas = ['maçã', 'banana', 'laranja'];
+demonstrarArray(
+    "Array Indexado Numericamente",
+    $frutas,
+    "Arrays indexados usam números inteiros como chaves, começando por padrão do índice 0"
+);
+
+// Arrays Associativos
+$pessoa = [
+    'nome' => 'Maria',
+    'idade' => 30,
+    'profissao' => 'Desenvolvedora'
+];
+demonstrarArray(
+    "Array Associativo",
+    $pessoa,
+    "Arrays associativos usam strings como chaves, permitindo uma associação significativa entre chave e valor"
+);
+
+// Arrays Multidimensionais
+$matriz = [
+    'frutas' => ['maçã', 'banana'],
+    'verduras' => ['alface', 'couve'],
+    'pessoa' => [
+        'nome' => 'João',
+        'contatos' => ['email' => 'joao@email.com']
+    ]
+];
+demonstrarArray(
+    "Array Multidimensional",
+    $matriz,
+    "Arrays podem conter outros arrays, criando estruturas de dados complexas"
+);
+
+// 3. Operações Básicas com Arrays
+echo "<h2>3. Operações Básicas com Arrays</h2>";
 
 // Adicionando elementos
-$frutas[] = "Morango"; // Adiciona ao final do array
+$numeros = [1, 2, 3];
+$numeros[] = 4;        // Append ao final
+$numeros[5] = 6;       // Índice específico
+array_push($numeros, 7, 8); // Múltiplos valores
+demonstrarArray(
+    "Adicionando Elementos",
+    $numeros,
+    "Existem várias formas de adicionar elementos a um array no PHP"
+);
 
-// Contando elementos
-echo "Total de frutas: " . count($frutas) . "<br>";
+// 4. Funções Essenciais de Array
+echo "<h2>4. Funções Essenciais de Array</h2>";
 
-// Iterando sobre o array
-echo "Lista de frutas:<br>";
-foreach ($frutas as $fruta) {
-    echo "- $fruta<br>";
-}
+// Manipulação de Arrays
+$array = ['a', 'b', 'c', 'd', 'e'];
 
-// 2. Arrays Associativos
-echo "<h2>Arrays Associativos:</h2>";
-$pessoa = [
-    "nome" => "Maria",
-    "idade" => 30,
-    "profissao" => "Desenvolvedora",
-    "cidade" => "São Paulo"
-];
+// Slice - Extraindo parte do array
+$slice = array_slice($array, 1, 2);
+demonstrarArray(
+    "array_slice()",
+    $slice,
+    "Extrai uma parte do array sem modificar o original. Parâmetros: array, início, comprimento"
+);
 
-// Acessando elementos
-echo "Nome: " . $pessoa["nome"] . "<br>";
-echo "Idade: " . $pessoa["idade"] . "<br>";
+// Splice - Modificando o array
+$splice = array_splice($array, 1, 2, ['x', 'y']);
+demonstrarArray(
+    "array_splice()",
+    $array,
+    "Modifica o array original, removendo/substituindo elementos. Útil para modificações in-place"
+);
 
-// Iterando sobre array associativo
-foreach ($pessoa as $chave => $valor) {
-    echo "$chave: $valor<br>";
-}
+// 5. Operações Avançadas
+echo "<h2>5. Operações Avançadas</h2>";
 
-// 3. Arrays Multidimensionais
-echo "<h2>Arrays Multidimensionais:</h2>";
-$alunos = [
-    ["nome" => "João", "notas" => [8, 7, 9]],
-    ["nome" => "Ana", "notas" => [9, 8, 10]],
-    ["nome" => "Pedro", "notas" => [7, 8, 8]]
-];
+// Map, Filter, Reduce
+$numeros = range(1, 5);
 
-// Acessando elementos
-echo "Primeira nota do João: " . $alunos[0]["notas"][0] . "<br>";
+// Map - Transformação
+$dobro = array_map(fn($n) => $n * 2, $numeros);
+demonstrarArray(
+    "array_map()",
+    $dobro,
+    "Aplica uma função a cada elemento do array, retornando um novo array com os resultados"
+);
 
-// Iterando sobre array multidimensional
-foreach ($alunos as $aluno) {
-    echo "Aluno: " . $aluno["nome"] . "<br>";
-    echo "Notas: " . implode(", ", $aluno["notas"]) . "<br>";
-    echo "Média: " . array_sum($aluno["notas"]) / count($aluno["notas"]) . "<br><br>";
-}
+// Filter - Filtragem
+$pares = array_filter($numeros, fn($n) => $n % 2 === 0);
+demonstrarArray(
+    "array_filter()",
+    $pares,
+    "Filtra elementos do array baseado em uma função de callback que retorna true/false"
+);
 
-// 4. Funções de Array
-echo "<h2>Funções de Array:</h2>";
+// Reduce - Redução
+$soma = array_reduce($numeros, fn($acc, $n) => $acc + $n, 0);
+echo "<div style='margin: 10px 0; padding: 10px; border: 1px solid #ddd;'>";
+echo "<h3>array_reduce()</h3>";
+echo "<p><em>Reduz um array a um único valor aplicando uma função de callback</em></p>";
+echo "Soma dos números: $soma";
+echo "</div>";
 
-// Sort - Ordena array indexado
-$numeros = [5, 2, 8, 1, 9];
-sort($numeros);
-echo "Array ordenado: " . implode(", ", $numeros) . "<br>";
+// 6. Ordenação de Arrays
+echo "<h2>6. Ordenação de Arrays</h2>";
 
-// Asort - Ordena array associativo mantendo índices
-$idades = ["João" => 25, "Maria" => 20, "Pedro" => 30];
-asort($idades);
-echo "Idades ordenadas:<br>";
-foreach ($idades as $nome => $idade) {
-    echo "$nome: $idade<br>";
-}
+$desordenado = [3, 1, 4, 1, 5];
+sort($desordenado);
+demonstrarArray(
+    "sort()",
+    $desordenado,
+    "Ordena um array indexado em ordem crescente"
+);
 
-// Array_push - Adiciona elementos ao final
-array_push($frutas, "Pera", "Abacaxi");
-echo "Frutas após push: " . implode(", ", $frutas) . "<br>";
+$associativo = ['c' => 3, 'a' => 1, 'b' => 2];
+asort($associativo);
+demonstrarArray(
+    "asort()",
+    $associativo,
+    "Ordena um array associativo pelos valores, mantendo as associações de índices"
+);
 
-// Array_pop - Remove último elemento
-$ultimo = array_pop($frutas);
-echo "Elemento removido: $ultimo<br>";
+// 7. Verificações Úteis
+echo "<h2>7. Verificações Úteis</h2>";
 
-// Array_shift - Remove primeiro elemento
-$primeiro = array_shift($frutas);
-echo "Primeiro elemento removido: $primeiro<br>";
+$array = ['a' => 1, 'b' => null, 'c' => 3];
 
-// Array_unshift - Adiciona elementos no início
-array_unshift($frutas, "Kiwi", "Manga");
-echo "Frutas após unshift: " . implode(", ", $frutas) . "<br>";
-
-// 5. Funções Úteis
-echo "<h2>Funções Úteis de Array:</h2>";
-
-// In_array - Verifica se elemento existe
-echo "Tem banana? " . (in_array("Banana", $frutas) ? "Sim" : "Não") . "<br>";
-
-// Array_key_exists - Verifica se chave existe
-echo "Tem idade? " . (array_key_exists("idade", $pessoa) ? "Sim" : "Não") . "<br>";
-
-// Array_merge - Combina arrays
-$array1 = [1, 2, 3];
-$array2 = [4, 5, 6];
-$combinado = array_merge($array1, $array2);
-echo "Arrays combinados: " . implode(", ", $combinado) . "<br>";
-
-// Array_filter - Filtra elementos
-$numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-$pares = array_filter($numeros, function ($n) {
-    return $n % 2 == 0;
-});
-echo "Números pares: " . implode(", ", $pares) . "<br>";
-
-// Array_map - Transforma elementos
-$dobro = array_map(function ($n) {
-    return $n * 2;
-}, $numeros);
-echo "Dobro dos números: " . implode(", ", $dobro) . "<br>";
-
-// Array_reduce - Reduz array a um valor
-$soma = array_reduce($numeros, function ($carry, $n) {
-    return $carry + $n;
-}, 0);
-echo "Soma dos números: $soma<br>";
+echo "<div style='margin: 10px 0; padding: 10px; border: 1px solid #ddd;'>";
+echo "<h3>Funções de Verificação</h3>";
+echo "<ul>";
+echo "<li>isset(\$array['a']): " . (isset($array['a']) ? 'true' : 'false') . " - Verifica se índice existe e não é null</li>";
+echo "<li>array_key_exists('b', \$array): " . (array_key_exists('b', $array) ? 'true' : 'false') . " - Verifica se índice existe, mesmo se null</li>";
+echo "<li>in_array(1, \$array): " . (in_array(1, $array) ? 'true' : 'false') . " - Verifica se valor existe no array</li>";
+echo "</ul></div>";

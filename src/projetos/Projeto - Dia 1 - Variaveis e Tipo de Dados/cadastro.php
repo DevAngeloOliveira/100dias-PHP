@@ -63,11 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Cadastro - 100 Dias de PHP</title>
+    <title>Sistema de Cadastro</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -81,98 +80,139 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style>
         .form-container {
             max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .success-message {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--success-color);
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius-lg);
-            margin-bottom: var(--spacing-lg);
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .error-message {
-            background: rgba(239, 68, 68, 0.1);
-            color: var(--danger-color);
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius-lg);
-            margin-bottom: var(--spacing-lg);
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .registration-form {
+            margin: 2rem auto;
+            padding: var(--spacing-lg);
             background: var(--bg-secondary);
-            padding: var(--spacing-xl);
             border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
             border: 1px solid var(--bg-accent);
         }
 
-        .form-group {
-            margin-bottom: var(--spacing-lg);
+        .form-grid {
+            display: grid;
+            gap: var(--spacing-md);
         }
 
-        .form-group label {
+        .input-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .input-group label {
             display: block;
-            margin-bottom: var(--spacing-sm);
-            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-primary);
             font-weight: 500;
         }
 
-        .hobbies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .hobby-option {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
             padding: var(--spacing-sm);
             border: 1px solid var(--bg-accent);
             border-radius: var(--border-radius-md);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: var(--transition-normal);
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .input-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-md) 0;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: var(--spacing-xs);
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: var(--spacing-md);
+            background: var(--gradient-primary);
+            color: var(--text-white);
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
             cursor: pointer;
             transition: var(--transition-normal);
         }
 
-        .hobby-option:hover {
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .success-message {
+            margin-top: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: var(--border-radius-md);
+            color: var(--success-color);
+            text-align: center;
+        }
+
+        .error-message {
+            margin-top: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: var(--border-radius-md);
+            color: var(--danger-color);
+            text-align: center;
+        }
+
+        .user-data {
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-lg);
             background: var(--bg-accent);
+            border-radius: var(--border-radius-lg);
         }
 
-        .hobby-option input[type="checkbox"] {
-            width: auto;
+        .user-data h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
         }
 
-        .newsletter-option {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .newsletter-option input[type="checkbox"] {
-            width: auto;
-        }
-
-        .form-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .data-grid {
+            display: grid;
             gap: var(--spacing-md);
         }
 
-        .form-footer button {
-            flex: 1;
+        .data-item {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-sm);
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius-md);
+            border: 1px solid var(--bg-accent);
         }
 
-        .form-footer button[type="reset"] {
-            background: var(--gradient-danger);
+        .data-label {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .data-value {
+            color: var(--text-secondary);
         }
     </style>
 </head>
@@ -183,132 +223,174 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
             <i class="fas fa-sun"></i>
         </button>
-        <a href="../../index.php" class="profile-button" aria-label="Voltar para início">
+        <a href="../../index.php" class="back-button" aria-label="Voltar">
             <i class="fas fa-home"></i>
         </a>
     </div>
 
-    <!-- Header -->
-    <header class="main-header">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <div class="header-content">
-                <h1 class="header-title">
-                    <i class="fas fa-user-plus"></i> Sistema de Cadastro
-                </h1>
-                <p class="header-subtitle">Projeto do Dia 1 - Variáveis e Tipos de Dados</p>
+            <div class="hero-content">
+                <h1 class="hero-title">Sistema de Cadastro</h1>
+                <p class="hero-subtitle">Projeto do Dia 1 - Variáveis e Tipos de Dados</p>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- Conteúdo Principal -->
     <main class="container">
-        <div class="form-container mt-4">
-            <?php if ($mensagem): ?>
-                <div class="success-message fade-in">
-                    <i class="fas fa-check-circle"></i> <?php echo $mensagem; ?>
-                </div>
-            <?php endif; ?>
-
-            <?php if ($erro): ?>
-                <div class="error-message fade-in">
-                    <i class="fas fa-exclamation-circle"></i> <?php echo $erro; ?>
-                </div>
-            <?php endif; ?>
-
-            <form method="POST" class="registration-form fade-in">
-                <div class="form-group">
+        <div class="form-container fade-in">
+            <form method="POST" class="form-grid">
+                <div class="input-group">
                     <label for="nome">Nome Completo</label>
-                    <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($nome); ?>" required>
+                    <input type="text" id="nome" name="nome" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
 
-                <div class="form-group">
+                <div class="input-group">
                     <label for="idade">Idade</label>
-                    <input type="number" id="idade" name="idade" value="<?php echo htmlspecialchars($idade); ?>" min="0">
+                    <input type="number" id="idade" name="idade" min="0" required>
                 </div>
 
-                <div class="form-group">
+                <div class="input-group">
                     <label for="altura">Altura (em metros)</label>
-                    <input type="number" id="altura" name="altura" value="<?php echo htmlspecialchars($altura); ?>" step="0.01" min="0">
+                    <input type="number" id="altura" name="altura" step="0.01" min="0" required>
                 </div>
 
-                <div class="form-group">
-                    <label>Hobbies</label>
-                    <div class="hobbies-grid">
-                        <?php foreach ($hobbies_disponiveis as $valor => $label): ?>
-                            <label class="hobby-option">
-                                <input type="checkbox" name="hobbies[]" value="<?php echo $valor; ?>"
-                                    <?php echo in_array($valor, $hobbies) ? 'checked' : ''; ?>>
-                                <?php echo $label; ?>
-                            </label>
-                        <?php endforeach; ?>
-                    </div>
+                <div class="input-group">
+                    <label for="hobbies">Hobbies</label>
+                    <textarea id="hobbies" name="hobbies" required></textarea>
                 </div>
 
-                <label class="newsletter-option">
-                    <input type="checkbox" name="newsletter" <?php echo $newsletter ? 'checked' : ''; ?>>
-                    Desejo receber a newsletter
-                </label>
-
-                <div class="form-footer">
-                    <button type="submit">
-                        <i class="fas fa-save"></i> Cadastrar
-                    </button>
-                    <button type="reset">
-                        <i class="fas fa-undo"></i> Limpar
-                    </button>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Desejo receber a newsletter</label>
                 </div>
+
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-user-plus"></i>
+                    Cadastrar
+                </button>
             </form>
+
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $nome = $_POST["nome"];
+                $email = $_POST["email"];
+                $idade = $_POST["idade"];
+                $altura = $_POST["altura"];
+                $hobbies = $_POST["hobbies"];
+                $newsletter = isset($_POST["newsletter"]) ? "Sim" : "Não";
+
+                $erro = false;
+                $mensagemErro = "";
+
+                // Validações
+                if (empty($nome) || empty($email) || empty($idade) || empty($altura) || empty($hobbies)) {
+                    $erro = true;
+                    $mensagemErro = "Todos os campos são obrigatórios!";
+                } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $erro = true;
+                    $mensagemErro = "E-mail inválido!";
+                } elseif ($idade < 0) {
+                    $erro = true;
+                    $mensagemErro = "Idade inválida!";
+                } elseif ($altura <= 0) {
+                    $erro = true;
+                    $mensagemErro = "Altura inválida!";
+                }
+
+                if (!$erro) {
+                    echo "<div class='success-message'>
+                            <i class='fas fa-check-circle'></i>
+                            Cadastro realizado com sucesso!
+                          </div>";
+
+                    echo "<div class='user-data'>
+                            <h3>Dados Cadastrados</h3>
+                            <div class='data-grid'>
+                                <div class='data-item'>
+                                    <span class='data-label'>Nome:</span>
+                                    <span class='data-value'>{$nome}</span>
+                                </div>
+                                <div class='data-item'>
+                                    <span class='data-label'>E-mail:</span>
+                                    <span class='data-value'>{$email}</span>
+                                </div>
+                                <div class='data-item'>
+                                    <span class='data-label'>Idade:</span>
+                                    <span class='data-value'>{$idade} anos</span>
+                                </div>
+                                <div class='data-item'>
+                                    <span class='data-label'>Altura:</span>
+                                    <span class='data-value'>{$altura}m</span>
+                                </div>
+                                <div class='data-item'>
+                                    <span class='data-label'>Hobbies:</span>
+                                    <span class='data-value'>{$hobbies}</span>
+                                </div>
+                                <div class='data-item'>
+                                    <span class='data-label'>Newsletter:</span>
+                                    <span class='data-value'>{$newsletter}</span>
+                                </div>
+                            </div>
+                          </div>";
+                } else {
+                    echo "<div class='error-message'>
+                            <i class='fas fa-exclamation-circle'></i>
+                            {$mensagemErro}
+                          </div>";
+                }
+            }
+            ?>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="mt-4 mb-4">
-        <div class="container text-center">
-            <p>
-                Desenvolvido com <i class="fas fa-heart" style="color: var(--danger-color);"></i> durante o desafio 100 Dias de PHP
-            </p>
-        </div>
-    </footer>
-
     <!-- Scripts -->
     <script>
-        // Função para alternar o tema
-        function toggleTheme() {
-            const body = document.body;
-            const themeToggle = document.getElementById('theme-toggle');
-            const icon = themeToggle.querySelector('i');
-
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.removeAttribute('data-theme');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Verificar tema salvo
         document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
             const themeToggle = document.getElementById('theme-toggle');
-            const icon = themeToggle.querySelector('i');
+            const body = document.body;
+            const html = document.documentElement;
 
-            if (savedTheme === 'dark') {
-                document.body.setAttribute('data-theme', 'dark');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
+            // Função para aplicar o tema
+            function applyTheme(theme) {
+                if (theme === 'dark') {
+                    body.setAttribute('data-theme', 'dark');
+                    html.setAttribute('data-theme', 'dark');
+                    themeToggle.querySelector('i').classList.remove('fa-sun');
+                    themeToggle.querySelector('i').classList.add('fa-moon');
+                } else {
+                    body.removeAttribute('data-theme');
+                    html.removeAttribute('data-theme');
+                    themeToggle.querySelector('i').classList.remove('fa-moon');
+                    themeToggle.querySelector('i').classList.add('fa-sun');
+                }
             }
 
-            // Adicionar evento de clique
+            // Verifica o tema salvo ou preferência do sistema
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+            // Aplica o tema inicial
+            applyTheme(initialTheme);
+
+            // Função para alternar o tema
+            function toggleTheme() {
+                const currentTheme = body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                applyTheme(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+
+            // Adiciona o evento de clique
             themeToggle.addEventListener('click', toggleTheme);
         });
     </script>
