@@ -4,87 +4,65 @@
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge)
 ![Progresso](https://img.shields.io/badge/Progresso-2%25-blue?style=for-the-badge)
 
-Uma jornada de aprendizado intensivo em PHP, com exercícios práticos e projetos reais desenvolvidos ao longo de 100 dias.
+Uma jornada de aprendizado intensivo em PHP, com exercícios práticos e projetos reais desenvolvidos ao longo de 100 dias, seguindo estritamente a documentação oficial do PHP.
 
 ## 🎯 Objetivo
 
-O objetivo deste projeto é aprofundar os conhecimentos em PHP através de uma jornada de 100 dias, onde cada dia é dedicado a um tema específico, com exercícios práticos e um projeto aplicado.
+O objetivo deste projeto é aprofundar os conhecimentos em PHP através de uma jornada de 100 dias, onde cada dia é dedicado a um tema específico, com exercícios práticos e projetos aplicados, sempre seguindo as melhores práticas e a documentação oficial.
 
 ## 📚 Conteúdo
 
-### Fundamentos Concluídos
-- [x] Dia 1: Variáveis e Tipos de Dados
-  - Introdução ao PHP
-  - Variáveis e tipos
-  - Conversão de tipos
-  - Constantes
-  - Projeto: Sistema de Cadastro
+### Fundamentos Atualizados
+- [x] Dia 1: Hello World e Sintaxe Básica
+  - Tags PHP e sintaxe básica
+  - Tipos de saída (echo, print, var_dump)
+  - Concatenação vs. Interpolação
+  - Heredoc e Nowdoc
+  - Exemplos práticos para web
 
-- [x] Dia 2: Operadores
-  - Operadores aritméticos
-  - Operadores de atribuição
-  - Operadores de comparação
-  - Operadores lógicos
-  - Arrays
-  - Projeto: Calculadora
+- [x] Dia 2: Variáveis e Tipos de Dados
+  - Tipos Escalares (boolean, integer, float, string)
+  - Tipos Compostos (array, object)
+  - Tipos Especiais (null, resource)
+  - Coerção de Tipos
+  - Escopo de Variáveis
+  - Variáveis Predefinidas
+  - Constantes
+
+- [x] Dia 3: Operadores
+  - Operadores Aritméticos
+  - Operadores de Atribuição
+  - Operadores de Comparação
+  - Operadores Lógicos
+  - Operadores de String
+  - Operadores de Incremento/Decremento
+  - Operadores de Tipo
+  - Operadores Nullsafe e Null Coalescing
+
+- [x] Dia 4: Arrays
+  - Sintaxe e Criação de Arrays
+  - Arrays Indexados vs Associativos
+  - Arrays Multidimensionais
+  - Operações Básicas
+  - Funções Essenciais
+  - Operações Avançadas (map, filter, reduce)
+  - Ordenação e Verificações
 
 ### Próximos Tópicos
 - [ ] Estruturas de Controle
 - [ ] Funções
-- [ ] Arrays Avançados
 - [ ] Programação Orientada a Objetos
+- [ ] Manipulação de Arquivos
 
-## 🏆 Conquistas
-
-### Nível Atual: 2 - Iniciante
-- XP Total: 850
-- Próximo Nível: 1000 XP
-
-### Conquistas Desbloqueadas
-- 🥉 **Primeiros Passos** - Iniciou sua jornada em PHP
-- 🥈 **Fundamentos Dominados** - Completou os exercícios básicos de PHP
-- 🥇 **Desenvolvedor Iniciante** - Criou seus primeiros projetos em PHP
-
-## 📊 Estatísticas
-- 4 Exercícios Completados
-- 2 Projetos Desenvolvidos
-- 850 XP Total
-- 2 Dias de Dedicação
-
-## 🚀 Projetos Desenvolvidos
-
-### Sistema de Cadastro
-- **Dia:** 1
-- **Tema:** Variáveis e Tipos de Dados
-- **Descrição:** Sistema de cadastro demonstrando o uso de diferentes tipos de variáveis
-- **Tecnologias:** PHP, HTML, CSS
-- **Status:** ✅ Concluído
-
-### Calculadora
-- **Dia:** 2
-- **Tema:** Operadores
-- **Descrição:** Calculadora com operações básicas usando operadores aritméticos
-- **Tecnologias:** PHP, HTML, CSS
-- **Status:** ✅ Concluído
-
-## 🛠️ Tecnologias Utilizadas
-
-- PHP 8+
-- HTML5
-- CSS3
-- Font Awesome (ícones)
-- Google Fonts
-- LocalStorage (tema escuro/claro)
-
-## 🎨 Features
+## 🎨 Features Atualizadas
 
 - Design moderno e responsivo
-- Tema escuro/claro
-- Sistema de gamificação
-- Barra de progresso
-- Cards interativos
-- Animações suaves
-- Ícones intuitivos
+- Sistema de tema escuro/claro aprimorado
+- Sistema de gamificação com níveis e XP
+- Demonstrações interativas de código
+- Exemplos práticos baseados na documentação oficial
+- Compatibilidade cross-browser melhorada
+- Animações e transições suaves
 
 ## 📁 Estrutura do Projeto
 
@@ -92,23 +70,24 @@ O objetivo deste projeto é aprofundar os conhecimentos em PHP através de uma j
 100dias-PHP/
 ├── src/
 │   ├── assets/
-│   │   └── css/
-│   │       ├── variables.css
-│   │       ├── base.css
-│   │       ├── components.css
-│   │       └── dark-theme.css
+│   │   ├── css/
+│   │   │   ├── variables.css
+│   │   │   ├── base.css
+│   │   │   ├── components.css
+│   │   │   └── dark-theme.css
+│   │   ├── js/
+│   │   │   └── script.js
+│   │   └── images/
 │   ├── fundamentos/
-│   │   ├── 01_hello_world.php
-│   │   ├── 02_variaveis.php
-│   │   ├── 03_operadores.php
-│   │   └── 04_arrays.php
-│   ├── projetos/
-│   │   ├── Projeto - Dia 1/
-│   │   │   └── cadastro.php
-│   │   └── Projeto - Dia 2/
-│   │       └── calculadora.php
+│   │   ├── 01_hello_world.php    # Sintaxe básica e saída
+│   │   ├── 02_variaveis.php      # Variáveis e tipos de dados
+│   │   ├── 03_operadores.php     # Operadores com exemplos
+│   │   └── 04_arrays.php         # Arrays e funções
+│   ├── exercicios/
+│   │   ├── exercicio_dia1.php
+│   │   └── exercicio_dia2.php
 │   ├── templates/
-│   │   └── profile.php
+│   │   └── profile.php           # Perfil com gamificação
 │   └── index.php
 └── README.md
 ```
@@ -118,7 +97,21 @@ O objetivo deste projeto é aprofundar os conhecimentos em PHP através de uma j
 1. Clone este repositório
 2. Configure um servidor PHP local (XAMPP, WAMP, etc.)
 3. Acesse o projeto através do servidor local
-4. Navegue pelos dias, exercícios e projetos
+4. Navegue pelos exemplos e exercícios
+
+## 📋 Requisitos
+
+- PHP 8.0 ou superior
+- Servidor web (Apache/Nginx)
+- Navegador moderno com suporte a CSS Grid e Flexbox
+
+## 🔄 Atualizações Recentes
+
+- Adicionada documentação detalhada em todos os arquivos fundamentais
+- Melhorada a compatibilidade cross-browser do CSS
+- Implementados exemplos práticos baseados na documentação oficial
+- Atualizado sistema de demonstração de código
+- Corrigidos problemas de compatibilidade CSS
 
 ## 📝 Licença
 
