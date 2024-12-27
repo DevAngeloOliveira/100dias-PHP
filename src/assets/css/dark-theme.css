@@ -1,110 +1,120 @@
-/* Tema Escuro - 100 Dias de PHP */
-
+/* Dark Theme */
 [data-theme="dark"] {
-    /* Cores de Fundo */
-    --bg-primary: #18191A;
-    --bg-secondary: #242526;
-    --bg-accent: #3A3B3C;
-    
-    /* Cores de Texto */
-    --text-primary: #E4E6EB;
-    --text-secondary: #B0B3B8;
-    --text-light: #888888;
-    
-    /* Ajustes de Sombra */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    /* Cores de fundo */
+    --bg-primary: #111827;
+    --bg-secondary: #1F2937;
+    --bg-accent: #374151;
 }
 
-/* Ajustes de Componentes no Tema Escuro */
-[data-theme="dark"] .main-header::before {
-    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
-}
-
-[data-theme="dark"] .day-card {
-    border-color: var(--bg-accent);
-}
-
-[data-theme="dark"] .content-card {
-    border: 1px solid var(--bg-accent);
-}
-
-[data-theme="dark"] code {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-[data-theme="dark"] pre {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-[data-theme="dark"] input,
-[data-theme="dark"] textarea,
-[data-theme="dark"] select {
-    background-color: var(--bg-secondary);
-    border-color: var(--bg-accent);
+/* Aplicação do tema escuro no body e html */
+[data-theme="dark"] body,
+[data-theme="dark"] html {
+    background-color: var(--bg-primary);
     color: var(--text-primary);
 }
 
-[data-theme="dark"] input:focus,
-[data-theme="dark"] textarea:focus,
-[data-theme="dark"] select:focus {
+/* Hero Section */
+[data-theme="dark"] .hero {
+    background: var(--gradient-primary);
+}
+
+[data-theme="dark"] .hero::before {
+    opacity: 0.1;
+}
+
+[data-theme="dark"] .hero-cta {
+    background: var(--text-white);
+    color: var(--primary-color);
+}
+
+/* Progress Card */
+[data-theme="dark"] .progress-card {
+    background: var(--bg-secondary);
+    border-color: var(--bg-accent);
+}
+
+[data-theme="dark"] .progress-number {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .progress-label {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .progress-bar-container {
+    background: var(--bg-accent);
+}
+
+/* Day Cards */
+[data-theme="dark"] .day-card {
+    background: var(--bg-secondary);
+    border-color: var(--bg-accent);
+}
+
+[data-theme="dark"] .day-header {
+    background: var(--gradient-primary);
+}
+
+[data-theme="dark"] .day-content {
+    background: var(--bg-secondary);
+}
+
+/* Content Cards */
+[data-theme="dark"] .content-card {
+    background: var(--bg-accent);
+    border-color: var(--bg-accent);
+}
+
+[data-theme="dark"] .content-card:hover {
+    background: var(--bg-secondary);
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
 }
 
-/* Ajustes de Gradientes no Tema Escuro */
-[data-theme="dark"] .gradient-primary {
-    background: linear-gradient(135deg, rgba(79, 70, 229, 0.9), rgba(99, 102, 241, 0.9));
+[data-theme="dark"] .content-card h4 {
+    color: var(--text-primary);
 }
 
-[data-theme="dark"] .gradient-success {
-    background: linear-gradient(135deg, rgba(5, 150, 105, 0.9), rgba(16, 185, 129, 0.9));
+[data-theme="dark"] .content-card p {
+    color: var(--text-secondary);
 }
 
-[data-theme="dark"] .gradient-info {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(59, 130, 246, 0.9));
-}
-
-[data-theme="dark"] .gradient-warning {
-    background: linear-gradient(135deg, rgba(217, 119, 6, 0.9), rgba(245, 158, 11, 0.9));
-}
-
-[data-theme="dark"] .gradient-danger {
-    background: linear-gradient(135deg, rgba(220, 38, 38, 0.9), rgba(239, 68, 68, 0.9));
-}
-
-/* Ajustes de Botões no Tema Escuro */
+/* Action Buttons */
 [data-theme="dark"] .action-button {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--text-white);
 }
 
-[data-theme="dark"] .action-button:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+[data-theme="dark"] .action-button.exercicio {
+    background: var(--gradient-info);
 }
 
-/* Ajustes de Progresso no Tema Escuro */
-[data-theme="dark"] .progress-container {
-    background-color: var(--bg-accent);
+[data-theme="dark"] .action-button.projeto {
+    background: var(--gradient-success);
 }
 
-[data-theme="dark"] .progress-bar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+/* Floating Buttons */
+[data-theme="dark"] .theme-toggle {
+    background: var(--gradient-warning);
 }
 
-/* Ajustes de Animações no Tema Escuro */
+[data-theme="dark"] .profile-button {
+    background: var(--gradient-primary);
+}
+
+/* Footer */
+[data-theme="dark"] footer p {
+    color: var(--text-secondary);
+}
+
+/* Content Titles */
+[data-theme="dark"] .content-title {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .content-title i {
+    color: var(--primary-color);
+}
+
+/* Fade Animation */
 [data-theme="dark"] .fade-in {
-    animation: darkFadeIn 0.5s ease-in;
-}
-
-@keyframes darkFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    animation: fadeIn 0.5s ease-out forwards;
 } 

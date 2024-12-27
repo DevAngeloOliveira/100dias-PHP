@@ -136,17 +136,23 @@ $nivel_atual = [
         }
 
         .profile-avatar {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             margin: 0 auto var(--spacing-md);
             background: var(--gradient-info);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: var(--font-size-3xl);
-            color: var(--text-white);
+            overflow: hidden;
             box-shadow: var(--shadow-lg);
+            border: 4px solid var(--text-white);
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .level-info {
@@ -381,9 +387,9 @@ $nivel_atual = [
         <div class="container">
             <div class="profile-info">
                 <div class="profile-avatar floating">
-                    <i class="fas fa-user-ninja"></i>
+                    <img src="../assets/images/user-icon.jpg" alt="Foto de Perfil" class="avatar-img">
                 </div>
-                <h1 class="header-title">Desenvolvedor PHP</h1>
+                <h1 class="header-title">DEV - Ângelo Oliveira</h1>
                 <p class="header-subtitle">Nível <?php echo $nivel_atual['nivel']; ?> - <?php echo $nivel_atual['nome']; ?></p>
             </div>
         </div>

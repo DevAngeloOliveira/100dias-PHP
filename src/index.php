@@ -420,38 +420,44 @@ $progressoTotal = ($diasConcluidos / 100) * 100;
 
     <!-- Scripts -->
     <script>
-        // Função para alternar o tema
-        function toggleTheme() {
-            const body = document.body;
-            const themeToggle = document.getElementById('theme-toggle');
-            const icon = themeToggle.querySelector('i');
-
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.removeAttribute('data-theme');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Verificar tema salvo
         document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
             const themeToggle = document.getElementById('theme-toggle');
-            const icon = themeToggle.querySelector('i');
+            const body = document.body;
+            const html = document.documentElement;
 
-            if (savedTheme === 'dark') {
-                document.body.setAttribute('data-theme', 'dark');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
+            // Função para aplicar o tema
+            function applyTheme(theme) {
+                if (theme === 'dark') {
+                    body.setAttribute('data-theme', 'dark');
+                    html.setAttribute('data-theme', 'dark');
+                    themeToggle.querySelector('i').classList.remove('fa-sun');
+                    themeToggle.querySelector('i').classList.add('fa-moon');
+                } else {
+                    body.removeAttribute('data-theme');
+                    html.removeAttribute('data-theme');
+                    themeToggle.querySelector('i').classList.remove('fa-moon');
+                    themeToggle.querySelector('i').classList.add('fa-sun');
+                }
             }
 
-            // Adicionar evento de clique
+            // Verifica o tema salvo ou preferência do sistema
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+            // Aplica o tema inicial
+            applyTheme(initialTheme);
+
+            // Função para alternar o tema
+            function toggleTheme() {
+                const currentTheme = body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                applyTheme(newTheme);
+                localStorage.setItem('theme', newTheme);
+            }
+
+            // Adiciona o evento de clique
             themeToggle.addEventListener('click', toggleTheme);
         });
     </script>
