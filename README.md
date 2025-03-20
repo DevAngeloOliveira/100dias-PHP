@@ -123,4 +123,4 @@ Desenvolvido com ❤️ durante o desafio 100 Dias de PHP.
 
 ---
 
-⌨️ com ❤️ por [Seu Nome](https://github.com/seu-usuario) 😊
+⌨️ com ❤️ por Gabriel Ângelo😊
